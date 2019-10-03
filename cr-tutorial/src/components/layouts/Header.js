@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="display4" color="inherit">
+        <Typography variant="h2" color="inherit">
           Exercise Database
         </Typography>
       </Toolbar>
