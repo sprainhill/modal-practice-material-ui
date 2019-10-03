@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.css";
+import { Header, Footer } from "./components/layouts";
 
 function App() {
   return (
     <div className="App">
-      <div>App incoming!</div>
+      <Header />
+      <Footer />
     </div>
   );
 }
