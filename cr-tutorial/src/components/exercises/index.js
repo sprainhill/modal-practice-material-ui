@@ -14,9 +14,19 @@ const styles = {
   }
 };
 
-const Exercises = ({ exercises, category, onSelect }) => {
+const Exercises = ({
+  exercises,
+  category,
+  onSelect,
+  exercise: {
+    id,
+    title = "Welcome",
+    description = "Please select an exercise from the list on the left"
+  }
+}) => {
   console.log("Exercises exercises", exercises);
   console.log("Exercises category", category);
+
   return (
     <Grid container>
       <Grid item sm>
@@ -49,9 +59,9 @@ const Exercises = ({ exercises, category, onSelect }) => {
       </Grid>
       <Grid item sm>
         <Paper style={styles.Paper}>
-          <Typography variant="h5">Welcome</Typography>
+          <Typography variant="h5">{title}</Typography>
           <Typography variant="subtitle1" style={{ marginTop: 20 }}>
-            Please select an exercise from the list on the left
+            {description}
           </Typography>
         </Paper>
       </Grid>

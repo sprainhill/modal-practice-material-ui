@@ -39,6 +39,7 @@ function App() {
       <Header />
       <Exercises
         exercises={exerciseProps}
+        exercise={exercise}
         category={category}
         onSelect={handleExerciseSelected}
       />
