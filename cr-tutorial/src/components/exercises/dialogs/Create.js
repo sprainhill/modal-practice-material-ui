@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Button,
-  TextField,
+  Form,
   Dialog,
   DialogActions,
   DialogContent,
@@ -12,17 +12,13 @@ import {
 export default props => {
   <>
     <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>Subscribe</DialogTitle>
+      <DialogTitle>Create a New Exercise</DialogTitle>
       <DialogContent>
-        <DialogContentText>Content</DialogContentText>
+        <DialogContentText>Please fill out the form below.</DialogContentText>
+        <Form></Form>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose} color="primary">
-          Cancel
-        </Button>
-        <Button onClick={handleClose} color="primary">
-          Subscribe
-        </Button>
+        <Button color="primary">Create</Button>
       </DialogActions>
     </Dialog>
   </>;
