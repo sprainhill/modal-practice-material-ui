@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Header />
-      <Exercises />
+      <Exercises exercises={exercises} />
       <Footer muscles={muscles} />
     </>
   );

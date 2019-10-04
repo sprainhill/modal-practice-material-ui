@@ -1,7 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import LeftPane from "./LeftPane";
-import RightPane from "./RightPane";
+import Paper from "@material-ui/core/Paper";
+// import LeftPane from "./LeftPane";
+// import RightPane from "./RightPane";
 
 const styles = {
   Paper: {
@@ -14,10 +15,10 @@ const Exercises = () => {
   return (
     <Grid container>
       <Grid item sm>
-        <LeftPane styles={styles} />
+        <Paper style={styles.Paper}>Left pane</Paper>;
       </Grid>
       <Grid item sm>
-        <RightPane styles={styles} />
+        <Paper style={styles.Paper}>Right pane</Paper>;
       </Grid>
     </Grid>
   );
