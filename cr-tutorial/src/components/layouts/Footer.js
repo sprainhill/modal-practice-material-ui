@@ -2,7 +2,7 @@ import React from "react";
 import { Paper, Tabs, Tab } from "@material-ui/core";
 
 const Footer = ({ muscles }) => {
-  console.log("Footer muscles", muscles);
+  // console.log("Footer muscles", muscles);
   return (
     <Paper>
       <Tabs indicatorColor="primary" textColor="primary" centered value={1}>

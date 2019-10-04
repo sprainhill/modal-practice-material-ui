@@ -6,7 +6,7 @@ import { muscles, exercises } from "./store";
 
 function App() {
   // const [exercises, setExercises] = React.useState("");
-  console.log("App exercises", exercises);
+  // console.log("App exercises", exercises);
 
   const getExerciseByMuscles = () => {
     return Object.entries(
@@ -21,10 +21,13 @@ function App() {
   };
 
   console.log("App getExerciseByMuscles", getExerciseByMuscles());
+
+  const exerciseProps = getExerciseByMuscles();
+  console.log("exerciseProps", exerciseProps);
   return (
     <>
       <Header />
-      <Exercises exercises={exercises} />
+      <Exercises exercises={exerciseProps} />
       <Footer muscles={muscles} />
     </>
   );
