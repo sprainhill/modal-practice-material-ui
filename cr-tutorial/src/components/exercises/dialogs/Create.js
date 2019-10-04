@@ -23,9 +23,13 @@ export default props => {
     setOpen(false);
   };
 
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+
   return (
     <>
-      <Fab color="inherit" size="small">
+      <Fab color="inherit" size="small" onClick={handleToggle}>
         <AddIcon />
       </Fab>
       <Dialog open={open} onClose={handleClose}>
