@@ -5,7 +5,7 @@ import Exercises from "./components/exercises";
 import { muscles, exercises } from "./store";
 
 function App() {
-  const [category, setCategory] = React.useState(0);
+  const [category, setCategory] = React.useState("back");
 
   const getExerciseByMuscles = () => {
     return Object.entries(
