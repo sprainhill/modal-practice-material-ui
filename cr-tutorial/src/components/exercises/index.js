@@ -24,8 +24,7 @@ const Exercises = ({
     description = "Please select an exercise from the list on the left"
   }
 }) => {
-  console.log("Exercises exercises", exercises);
-  console.log("Exercises category", category);
+  // console.log("Exercises exercises", exercises);
 
   return (
     <Grid container>
@@ -33,18 +32,17 @@ const Exercises = ({
         <Paper style={styles.Paper}>
           {exercises.map(([group, exercises]) => {
             console.log("Exercises group", group);
+            console.log("Exercises category", category);
             if (!category || category === group) {
               return (
                 <>
                   <Typography variant="subtitle1">{group}</Typography>
                   <List component="ul" style={{ textTransform: "capitalize" }}>
                     {exercises.map(({ id, title }) => {
+                      // console.log("inside exercises", exercises);
                       return (
-                        <ListItem button>
-                          <ListItemText
-                            primary={title}
-                            onClick={() => onSelect(id)}
-                          />
+                        <ListItem button onClick={() => onSelect(id)}>
+                          <ListItemText primary={title} />
                         </ListItem>
                       );
                     })}

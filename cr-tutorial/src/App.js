@@ -21,7 +21,7 @@ function App() {
     );
   };
 
-  console.log("App getExerciseByMuscles", getExerciseByMuscles());
+  // console.log("App getExerciseByMuscles", getExerciseByMuscles());
 
   const exerciseProps = getExerciseByMuscles();
 
@@ -30,8 +30,11 @@ function App() {
   };
 
   const handleExerciseSelected = id => {
-    console.log("exercises", exercises);
-    setExercise(exercises.find(exercise => exercise.id === id));
+    // console.log("exercises", exercises);
+    const selected = exercises.find(exercise => exercise.id === id);
+
+    setExercise(selected);
+    // handleCategorySelected(selected);
   };
 
   return (
