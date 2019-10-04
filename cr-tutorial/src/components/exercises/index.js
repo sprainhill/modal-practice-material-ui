@@ -14,7 +14,7 @@ const styles = {
   }
 };
 
-const Exercises = ({ exercises, category }) => {
+const Exercises = ({ exercises, category, onSelect }) => {
   console.log("Exercises exercises", exercises);
   console.log("Exercises category", category);
   return (
@@ -28,10 +28,13 @@ const Exercises = ({ exercises, category }) => {
                 <>
                   <Typography variant="subtitle1">{group}</Typography>
                   <List component="ul" style={{ textTransform: "capitalize" }}>
-                    {exercises.map(({ title }) => {
+                    {exercises.map(({ id, title }) => {
                       return (
                         <ListItem button>
-                          <ListItemText primary={title} />
+                          <ListItemText
+                            primary={title}
+                            onClick={id => onselect(id)}
+                          />
                         </ListItem>
                       );
                     })}
