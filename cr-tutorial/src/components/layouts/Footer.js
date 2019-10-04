@@ -7,6 +7,10 @@ const Footer = ({ muscles, category, onSelect }) => {
     ? muscles.findIndex(group => group === category) + 1
     : 0;
 
+  const onIndexSelect = (event, index) => {
+    onSelect(index === 0 ? "" : muscles[index - 1]);
+  };
+
   return (
     <Paper>
       <Tabs
@@ -14,9 +18,7 @@ const Footer = ({ muscles, category, onSelect }) => {
         textColor="primary"
         centered
         value={index}
-        onChange={(event, index) => {
-          onSelect(index === 0 ? "" : muscles[index - 1]);
-        }}
+        onChange={onIndexSelect}
       >
         <Tab label="All" />
         {muscles.map((muscle, index) => {
