@@ -5,11 +5,19 @@ import Exercises from "./components/exercises";
 import { muscles, exercises } from "./store";
 
 function App() {
-  const [exercises, setExercises] = React.useState("");
+  // const [exercises, setExercises] = React.useState("");
   console.log("App exercises", exercises);
 
   const getExerciseByMuscles = () => {
-    return exercises;
+    return Object.entries(
+      exercises.reduce((exercises, exercise) => {
+        const { muscles } = exercise;
+        exercises[muscles] = exercises[muscles]
+          ? [...exercises[muscles], exercise]
+          : [exercise];
+        return exercises;
+      }, {})
+    );
   };
 
   console.log("App getExerciseByMuscles", getExerciseByMuscles());
