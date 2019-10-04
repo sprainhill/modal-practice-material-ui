@@ -6,7 +6,13 @@ import { muscles, exercises } from "./store";
 
 function App() {
   const [exercises, setExercises] = React.useState("");
+  console.log("App exercises", exercises);
 
+  const getExerciseByMuscles = () => {
+    return exercises;
+  };
+
+  console.log("App getExerciseByMuscles", getExerciseByMuscles());
   return (
     <>
       <Header />
