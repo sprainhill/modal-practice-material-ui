@@ -5,7 +5,7 @@ import Exercises from "./components/exercises";
 import { muscles, exercises } from "./store";
 
 function App() {
-  const [category, setCategory] = React.useState("back");
+  const [category, setCategory] = React.useState("");
 
   const getExerciseByMuscles = () => {
     return Object.entries(
@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <Header />
-      <Exercises exercises={exerciseProps} />
+      <Exercises exercises={exerciseProps} category={category} />
       <Footer
         muscles={muscles}
         onSelect={handleCategorySelected}

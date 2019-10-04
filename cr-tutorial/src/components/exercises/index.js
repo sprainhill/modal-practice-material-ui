@@ -14,27 +14,33 @@ const styles = {
   }
 };
 
-const Exercises = ({ exercises }) => {
+const Exercises = ({ exercises, category }) => {
   console.log("Exercises exercises", exercises);
+  console.log("Exercises category", category);
   return (
     <Grid container>
       <Grid item sm>
         <Paper style={styles.Paper}>
           {exercises.map(([group, exercises]) => {
-            return (
-              <>
-                <Typography variant="subtitle1">{group}</Typography>
-                <List component="ul" style={{ textTransform: "capitalize" }}>
-                  {exercises.map(({ title }) => {
-                    return (
-                      <ListItem button>
-                        <ListItemText primary={title} />
-                      </ListItem>
-                    );
-                  })}
-                </List>
-              </>
-            );
+            console.log("Exercises group", group);
+            if (!category || category === group) {
+              return (
+                <>
+                  <Typography variant="subtitle1">{group}</Typography>
+                  <List component="ul" style={{ textTransform: "capitalize" }}>
+                    {exercises.map(({ title }) => {
+                      return (
+                        <ListItem button>
+                          <ListItemText primary={title} />
+                        </ListItem>
+                      );
+                    })}
+                  </List>
+                </>
+              );
+            } else {
+              return null;
+            }
           })}
         </Paper>
       </Grid>
