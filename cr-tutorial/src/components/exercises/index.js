@@ -33,7 +33,7 @@ const Exercises = ({ exercises, category, onSelect }) => {
                         <ListItem button>
                           <ListItemText
                             primary={title}
-                            onClick={id => onselect(id)}
+                            onClick={() => onSelect(id)}
                           />
                         </ListItem>
                       );

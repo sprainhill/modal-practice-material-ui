@@ -6,6 +6,8 @@ import { muscles, exercises } from "./store";
 
 function App() {
   const [category, setCategory] = React.useState("");
+  const [exercise, setExercise] = React.useState("");
+  // console.log("App seedExercises", seedExercises);
 
   const getExerciseByMuscles = () => {
     return Object.entries(
@@ -27,10 +29,19 @@ function App() {
     setCategory(category);
   };
 
+  const handleExerciseSelected = id => {
+    console.log("exercises", exercises);
+    setExercise(exercises.find(exercise => exercise.id === id));
+  };
+
   return (
     <>
       <Header />
-      <Exercises exercises={exerciseProps} category={category} />
+      <Exercises
+        exercises={exerciseProps}
+        category={category}
+        onSelect={handleExerciseSelected}
+      />
       <Footer
         muscles={muscles}
         onSelect={handleCategorySelected}
