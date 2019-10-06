@@ -35,15 +35,6 @@ export default props => {
 
   const classes = useStyles();
 
-  // const styles = {
-  //   button: {
-  //     flexGrow: 1
-  //   },
-  //   formField: {
-  //     width: 500
-  //   }
-  // };
-
   console.log("Create exercise: ", exercise);
 
   const handleClose = () => {
@@ -56,6 +47,11 @@ export default props => {
 
   const handleChanges = name => ({ target: { value } }) => {
     setExercise({ ...exercise, [name]: value });
+  };
+
+  const handleSubmit = () => {
+    // validation
+    props.onCreate(exercise);
   };
 
   const { title, description, muscles } = exercise,
@@ -109,7 +105,9 @@ export default props => {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button color="primary">Create</Button>
+          <Button color="primary" variant="raised" onClick={handleSubmit}>
+            Create
+          </Button>
         </DialogActions>
       </Dialog>
     </>
