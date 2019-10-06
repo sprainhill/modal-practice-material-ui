@@ -10,7 +10,7 @@ const styles = {
   }
 };
 
-const Header = ({ muscles }) => {
+const Header = ({ muscles, onCreate }) => {
   console.log("Header muscles", muscles);
   return (
     <AppBar position="static">
@@ -18,7 +18,7 @@ const Header = ({ muscles }) => {
         <Typography variant="h2" color="inherit" style={styles.header}>
           Exercise Database
         </Typography>
-        <CreateDialog muscles={muscles} />
+        <CreateDialog muscles={muscles} onCreate={onCreate} />
       </Toolbar>
     </AppBar>
   );

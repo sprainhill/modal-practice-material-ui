@@ -37,9 +37,13 @@ function App() {
     // handleCategorySelected(selected);
   };
 
+  const onCreate = exercise => {
+    console.log("App onCreate exercise", exercise);
+  };
+
   return (
     <>
-      <Header muscles={muscles} />
+      <Header muscles={muscles} onCreate={onCreate} />
       <Exercises
         exercises={exerciseProps}
         exercise={exercise}

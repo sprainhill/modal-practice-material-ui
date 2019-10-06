@@ -51,7 +51,8 @@ export default props => {
 
   const handleSubmit = () => {
     // validation
-    props.onCreate(exercise);
+    const { onCreate } = props;
+    onCreate(exercise);
   };
 
   const { title, description, muscles } = exercise,
@@ -105,7 +106,7 @@ export default props => {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button color="primary" variant="raised" onClick={handleSubmit}>
+          <Button color="primary" variant="outlined" onClick={handleSubmit}>
             Create
           </Button>
         </DialogActions>
