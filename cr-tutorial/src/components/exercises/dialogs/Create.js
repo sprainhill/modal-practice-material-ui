@@ -22,8 +22,13 @@ export default props => {
   const styles = {
     button: {
       flexGrow: 1
+    },
+    formField: {
+      width: 500
     }
   };
+
+  console.log("Create exercise: ", exercise);
 
   const handleClose = () => {
     setOpen(false);
@@ -33,9 +38,11 @@ export default props => {
     setOpen(!open);
   };
 
-  const handleChanges = name => event => {
-    setExercise({ ...exercise, [name]: event.target.value });
+  const handleChanges = name => ({ target: { value } }) => {
+    setExercise({ ...exercise, [name]: value });
   };
+
+  const { title, description, muscles } = exercise;
 
   return (
     <>
@@ -50,23 +57,28 @@ export default props => {
             <TextField
               id="standard-name"
               label="Title"
-              value={exercise.title}
+              value={title}
               onChange={handleChanges("title")}
               margin="normal"
+              style={styles.formField}
             />
+            <br />
             <TextField
               id="standard-name"
               label="Description"
-              value={exercise.description}
+              value={description}
               onChange={handleChanges("description")}
               margin="normal"
+              style={styles.formField}
             />
+            <br />
             <TextField
               id="standard-name"
               label="Name"
-              value={exercise.muscles}
+              value={muscles}
               onChange={handleChanges("muscles")}
               margin="normal"
+              style={styles.formField}
             />
           </form>
         </DialogContent>
