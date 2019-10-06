@@ -87,18 +87,10 @@ export default props => {
             </FormControl>
             <br />
             <TextField
-              label="Name"
-              value={muscles}
-              onChange={handleChanges("muscles")}
-              margin="normal"
-              style={styles.formField}
-            />
-            <br />
-            <TextField
               label="Description"
               multiline
               rows="4"
-              defaultValue="Exercise description"
+              onChange={handleChanges("description")}
               margin="normal"
               style={styles.formField}
             />
