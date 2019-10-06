@@ -80,6 +80,15 @@ export default props => {
               margin="normal"
               style={styles.formField}
             />
+            <TextField
+              id="standard-multiline-static"
+              label="Multiline"
+              multiline
+              rows="4"
+              defaultValue="Default Value"
+              margin="normal"
+              style={styles.formField}
+            />
           </form>
         </DialogContent>
         <DialogActions>
