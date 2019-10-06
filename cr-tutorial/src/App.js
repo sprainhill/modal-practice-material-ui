@@ -39,7 +39,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header muscles={muscles} />
       <Exercises
         exercises={exerciseProps}
         exercise={exercise}

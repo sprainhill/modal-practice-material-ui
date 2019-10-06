@@ -10,14 +10,15 @@ const styles = {
   }
 };
 
-const Header = () => {
+const Header = ({ muscles }) => {
+  console.log("Header muscles", muscles);
   return (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h2" color="inherit" style={styles.header}>
           Exercise Database
         </Typography>
-        <CreateDialog />
+        <CreateDialog muscles={muscles} />
       </Toolbar>
     </AppBar>
   );

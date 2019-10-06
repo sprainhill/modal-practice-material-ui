@@ -46,7 +46,8 @@ export default props => {
     setExercise({ ...exercise, [name]: value });
   };
 
-  const { title, description, muscles } = exercise;
+  const { title, description, muscles } = exercise,
+    { muscles: categories } = props;
 
   return (
     <>
@@ -68,12 +69,20 @@ export default props => {
             <br />
             <FormControl>
               <InputLabel htmlFor="muscles">Muscles</InputLabel>
-              <Select value={muscles} onChange={handleChanges("muscles")}>
-                <MenuItem value={"Shoulders"}>Shoulders</MenuItem>
+              <Select
+                value={muscles}
+                onChange={handleChanges("muscles")}
+                style={styles.formField}
+              >
+                {categories.map(category => {
+                  return <MenuItem value={category}>{category}</MenuItem>;
+                })}
+
+                {/* <MenuItem value={"Shoulders"}>Shoulders</MenuItem>
                 <MenuItem value={"Chest"}>Chest</MenuItem>
                 <MenuItem value={"Arms"}>Arms</MenuItem>
                 <MenuItem value={"Back"}>Back</MenuItem>
-                <MenuItem value={"Legs"}>Legs</MenuItem>
+                <MenuItem value={"Legs"}>Legs</MenuItem> */}
               </Select>
             </FormControl>
             <br />
