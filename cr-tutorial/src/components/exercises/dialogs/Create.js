@@ -53,6 +53,7 @@ export default props => {
     // validation
     const { onCreate } = props;
     onCreate(exercise);
+    setOpen(false);
     setExercise({
       title: "",
       description: "",
