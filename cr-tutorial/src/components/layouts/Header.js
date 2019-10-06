@@ -11,7 +11,7 @@ const styles = {
 };
 
 const Header = ({ muscles, onCreate }) => {
-  console.log("Header muscles", muscles);
+  // console.log("Header muscles", muscles);
   return (
     <AppBar position="static">
       <Toolbar>

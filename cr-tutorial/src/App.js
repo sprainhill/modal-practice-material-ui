@@ -8,7 +8,7 @@ function App() {
   const [category, setCategory] = React.useState("");
   const [exercise, setExercise] = React.useState("");
   const [exercisesOnState, setExercisesOnState] = React.useState(seedExercises);
-  // console.log("App seedExercises", seedExercises);
+  console.log("App exercisesOnState", exercisesOnState);
 
   const getExerciseByMuscles = () => {
     return Object.entries(
@@ -40,7 +40,7 @@ function App() {
 
   const onCreate = exercise => {
     console.log("App onCreate exercise", exercise);
-    setExercise(exercise);
+    setExercisesOnState([...exercisesOnState, exercise]);
   };
 
   return (

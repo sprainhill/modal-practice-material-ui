@@ -2,7 +2,7 @@ import React from "react";
 import { Paper, Tabs, Tab } from "@material-ui/core";
 
 const Footer = ({ muscles, category, onSelect }) => {
-  console.log("Footer muscles", muscles);
+  // console.log("Footer muscles", muscles);
   const index = category
     ? muscles.findIndex(group => group === category) + 1
     : 0;
