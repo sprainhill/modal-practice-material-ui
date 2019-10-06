@@ -31,8 +31,8 @@ const Exercises = ({
       <Grid item sm>
         <Paper style={styles.Paper}>
           {exercises.map(([group, exercises]) => {
-            console.log("Exercises group", group);
-            console.log("Exercises category", category);
+            // console.log("Exercises group", group);
+            // console.log("Exercises category", category);
             if (!category || category === group) {
               return (
                 <>
@@ -41,7 +41,7 @@ const Exercises = ({
                     {exercises.map(({ id, title }) => {
                       // console.log("inside exercises", exercises);
                       return (
-                        <ListItem button onClick={() => onSelect(id)}>
+                        <ListItem button onClick={() => onSelect(id)} key={id}>
                           <ListItemText primary={title} />
                         </ListItem>
                       );

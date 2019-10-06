@@ -84,7 +84,11 @@ export default props => {
                 className={classes.formField}
               >
                 {categories.map(category => {
-                  return <MenuItem value={category}>{category}</MenuItem>;
+                  return (
+                    <MenuItem value={category} key={category}>
+                      {category}
+                    </MenuItem>
+                  );
                 })}
 
                 {/* <MenuItem value={"Shoulders"}>Shoulders</MenuItem>

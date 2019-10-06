@@ -2,16 +2,17 @@ import React from "react";
 import "./App.css";
 import { Header, Footer } from "./components/layouts";
 import Exercises from "./components/exercises";
-import { muscles, exercises } from "./store";
+import { muscles, seedExercises } from "./store";
 
 function App() {
   const [category, setCategory] = React.useState("");
   const [exercise, setExercise] = React.useState("");
+  const [exercisesOnState, setExercisesOnState] = React.useState(seedExercises);
   // console.log("App seedExercises", seedExercises);
 
   const getExerciseByMuscles = () => {
     return Object.entries(
-      exercises.reduce((exercises, exercise) => {
+      exercisesOnState.reduce((exercises, exercise) => {
         const { muscles } = exercise;
         exercises[muscles] = exercises[muscles]
           ? [...exercises[muscles], exercise]
@@ -31,7 +32,7 @@ function App() {
 
   const handleExerciseSelected = id => {
     // console.log("exercises", exercises);
-    const selected = exercises.find(exercise => exercise.id === id);
+    const selected = exercisesOnState.find(exercise => exercise.id === id);
 
     setExercise(selected);
     // handleCategorySelected(selected);
@@ -39,6 +40,7 @@ function App() {
 
   const onCreate = exercise => {
     console.log("App onCreate exercise", exercise);
+    setExercise(exercise);
   };
 
   return (

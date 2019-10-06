@@ -6,8 +6,8 @@ const Footer = ({ muscles, category, onSelect }) => {
   const index = category
     ? muscles.findIndex(group => group === category) + 1
     : 0;
-  console.log("Footer index", index);
-  console.log("Footer category", category);
+  // console.log("Footer index", index);
+  // console.log("Footer category", category);
 
   const onIndexSelect = (event, index) => {
     onSelect(index === 0 ? "" : muscles[index - 1]);

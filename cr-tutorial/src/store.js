@@ -1,6 +1,6 @@
 export const muscles = ["Shoulders", "Chest", "Arms", "Back", "Legs"];
 
-export const exercises = [
+export const seedExercises = [
   {
     id: "overhead-press",
     title: "Overhead Press",
