@@ -67,22 +67,16 @@ export default props => {
             />
             <br />
             <FormControl>
-              <InputLabel>Age</InputLabel>
-              <Select
-                value={values.age}
-                onChange={handleChange}
-                inputProps={{
-                  name: "age",
-                  id: "age-simple"
-                }}
-              >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+              <InputLabel htmlFor="muscles">Muscles</InputLabel>
+              <Select value={muscles} onChange={handleChanges("muscles")}>
+                <MenuItem value={"Shoulders"}>Shoulders</MenuItem>
+                <MenuItem value={"Chest"}>Chest</MenuItem>
+                <MenuItem value={"Arms"}>Arms</MenuItem>
+                <MenuItem value={"Back"}>Back</MenuItem>
+                <MenuItem value={"Legs"}>Legs</MenuItem>
               </Select>
             </FormControl>
             <br />
-
             <TextField
               label="Name"
               value={muscles}
