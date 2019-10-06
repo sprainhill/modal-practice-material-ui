@@ -13,7 +13,11 @@ import AddIcon from "@material-ui/icons/Add";
 
 export default props => {
   const [open, setOpen] = React.useState(false);
-  const [values, setValues] = React.useState({});
+  const [exercise, setExercise] = React.useState({
+    title: "",
+    description: "",
+    muscles: ""
+  });
 
   const styles = {
     button: {
@@ -30,7 +34,7 @@ export default props => {
   };
 
   const handleChanges = name => event => {
-    setValues({ ...values, [name]: event.target.value });
+    setExercise({ ...exercise, [name]: event.target.value });
   };
 
   return (
@@ -45,9 +49,23 @@ export default props => {
           <form>
             <TextField
               id="standard-name"
+              label="Title"
+              value={exercise.title}
+              onChange={handleChanges("title")}
+              margin="normal"
+            />
+            <TextField
+              id="standard-name"
+              label="Description"
+              value={exercise.description}
+              onChange={handleChanges("description")}
+              margin="normal"
+            />
+            <TextField
+              id="standard-name"
               label="Name"
-              value={values.name}
-              onChange={handleChanges("name")}
+              value={exercise.muscles}
+              onChange={handleChanges("muscles")}
               margin="normal"
             />
           </form>
