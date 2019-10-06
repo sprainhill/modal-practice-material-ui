@@ -7,7 +7,11 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  TextField
+  TextField,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 
@@ -55,7 +59,6 @@ export default props => {
           <DialogContentText>Please fill out the form below.</DialogContentText>
           <form>
             <TextField
-              id="standard-name"
               label="Title"
               value={title}
               onChange={handleChanges("title")}
@@ -63,29 +66,36 @@ export default props => {
               style={styles.formField}
             />
             <br />
-            <TextField
-              id="standard-name"
-              label="Description"
-              value={description}
-              onChange={handleChanges("description")}
-              margin="normal"
-              style={styles.formField}
-            />
+            <FormControl>
+              <InputLabel>Age</InputLabel>
+              <Select
+                value={values.age}
+                onChange={handleChange}
+                inputProps={{
+                  name: "age",
+                  id: "age-simple"
+                }}
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
             <br />
+
             <TextField
-              id="standard-name"
               label="Name"
               value={muscles}
               onChange={handleChanges("muscles")}
               margin="normal"
               style={styles.formField}
             />
+            <br />
             <TextField
-              id="standard-multiline-static"
-              label="Multiline"
+              label="Description"
               multiline
               rows="4"
-              defaultValue="Default Value"
+              defaultValue="Exercise description"
               margin="normal"
               style={styles.formField}
             />
