@@ -14,6 +14,16 @@ import {
   Select
 } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(theme => ({
+  button: {
+    flexGrow: 1
+  },
+  formField: {
+    width: 500
+  }
+}));
 
 export default props => {
   const [open, setOpen] = React.useState(false);
@@ -23,14 +33,16 @@ export default props => {
     muscles: ""
   });
 
-  const styles = {
-    button: {
-      flexGrow: 1
-    },
-    formField: {
-      width: 500
-    }
-  };
+  const classes = useStyles();
+
+  // const styles = {
+  //   button: {
+  //     flexGrow: 1
+  //   },
+  //   formField: {
+  //     width: 500
+  //   }
+  // };
 
   console.log("Create exercise: ", exercise);
 
@@ -64,7 +76,7 @@ export default props => {
               value={title}
               onChange={handleChanges("title")}
               margin="normal"
-              style={styles.formField}
+              className={classes.formField}
             />
             <br />
             <FormControl>
@@ -72,7 +84,7 @@ export default props => {
               <Select
                 value={muscles}
                 onChange={handleChanges("muscles")}
-                style={styles.formField}
+                className={classes.formField}
               >
                 {categories.map(category => {
                   return <MenuItem value={category}>{category}</MenuItem>;
@@ -92,7 +104,7 @@ export default props => {
               rows="4"
               onChange={handleChanges("description")}
               margin="normal"
-              style={styles.formField}
+              className={classes.formField}
             />
           </form>
         </DialogContent>
