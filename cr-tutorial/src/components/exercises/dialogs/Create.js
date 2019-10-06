@@ -52,7 +52,10 @@ export default props => {
   const handleSubmit = () => {
     // validation
     const { onCreate } = props;
-    onCreate(exercise);
+    onCreate({
+      ...exercise,
+      id: exercise.title.toLocaleLowerCase().replace(/ /g, "-")
+    });
     setOpen(false);
     setExercise({
       title: "",
